@@ -54,15 +54,17 @@ export default function App() {
             // Tab Bar Buttons....
           }
 
-          {TabButton(currentTab, setCurrentTab, "Home", home)}
-          {TabButton(currentTab, setCurrentTab, "Search", home)}
-          {TabButton(currentTab, setCurrentTab, "Notifications", home)}
-          {TabButton(currentTab, setCurrentTab, "Settings", home)}
+          {TabButton(currentTab, setCurrentTab, "INICIO", home)}
+          {TabButton(currentTab, setCurrentTab,"PRODUCTOS", home)}
+          {TabButton(currentTab, setCurrentTab,"PROVEEDORES", home)}
+          {TabButton(currentTab, setCurrentTab,"BODEGAS", home)}
+          {TabButton(currentTab, setCurrentTab,"INVENTARIO", home)}
+
 
         </View>
 
         <View>
-          {TabButton(currentTab, setCurrentTab, "LogOut", logout)}
+          {TabButton(currentTab, setCurrentTab, "CERRER", home)}
         </View>
 
       </View>
@@ -166,17 +168,17 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
   return (
 
     <TouchableOpacity onPress={() => {
-      if (title == "LogOut") {
-        // Do your Stuff...
+      if (title === "LogOut") {
+        // Lógica para cerrar sesión
       } else {
-        setCurrentTab(title)
+        setCurrentTab(title);
       }
     }}>
       <View style={{
         flexDirection: "row",
         alignItems: 'center',
         paddingVertical: 8,
-        backgroundColor: currentTab == title ? 'white' : 'transparent',
+        backgroundColor: currentTab === title ? 'white' : 'transparent',
         paddingLeft: 13,
         paddingRight: 35,
         borderRadius: 8,
@@ -185,14 +187,14 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
 
         <Image source={image} style={{
           width: 25, height: 25,
-          tintColor: currentTab == title ? "#5359D1" : "white"
-        }}></Image>
+          tintColor: currentTab === title ? "#5359D1" : "white"
+        }} />
 
         <Text style={{
           fontSize: 15,
           fontWeight: 'bold',
           paddingLeft: 15,
-          color: currentTab == title ? "#5359D1" : "white"
+          color: currentTab === title ? "#5359D1" : "white"
         }}>{title}</Text>
 
       </View>

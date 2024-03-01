@@ -27,7 +27,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
 
-      <View style={{ justifyContent: 'flex-start', padding: 15 }}>
+      <View style={{ justifyContent: 'flex-start', padding: 15,justifyContent: 'flex-start' }}>
         <Image source={azul} style={{
           width: 60,
           height: 60,
@@ -40,29 +40,30 @@ export default function App() {
           fontWeight: 'bold',
           color: 'white',
           marginTop: 20
-        }}>Jenna Ezarik</Text>
+        }}>Administrador</Text>
 
-        <TouchableOpacity>
-          <Text style={{
-            marginTop: 6,
-            color: 'white'
-          }}>View Profile</Text>
-        </TouchableOpacity>
 
         <View style={{ flexGrow: 1, marginTop: 50 }}>
           {
             // Tab Bar Buttons....
           }
 
-          {TabButton(currentTab, setCurrentTab, "Home", home)}
-          {TabButton(currentTab, setCurrentTab, "Search", home)}
-          {TabButton(currentTab, setCurrentTab, "Notifications", home)}
-          {TabButton(currentTab, setCurrentTab, "Settings", home)}
+          {TabButton(currentTab, setCurrentTab, "INICIO", home)}
+          {TabButton(currentTab, setCurrentTab,"CLIENTES", home)}
+          {TabButton(currentTab, setCurrentTab,"EMPLEADOS", home)}
+          {TabButton(currentTab, setCurrentTab,"PRODUCTOS", home)}
+          {TabButton(currentTab, setCurrentTab,"PROVEEDORES", home)}
+          {TabButton(currentTab, setCurrentTab,"PAGOS", home)}
+          {TabButton(currentTab, setCurrentTab,"CAJA", home)}
+          {TabButton(currentTab, setCurrentTab,"BODEGAS", home)}
+          {TabButton(currentTab, setCurrentTab,"INVENTARIO", home)}
+          {TabButton(currentTab, setCurrentTab,"FACTURAS", home)}
+          {TabButton(currentTab, setCurrentTab,"REGISTRO", home)}
 
         </View>
 
         <View>
-          {TabButton(currentTab, setCurrentTab, "LogOut", home)}
+          {TabButton(currentTab, setCurrentTab, "CERRER", home)}
         </View>
 
       </View>
@@ -204,7 +205,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#5359D1',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
+    
   },
 });
